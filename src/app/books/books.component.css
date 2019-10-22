@@ -1,0 +1,23 @@
+.parent {
+  display: flex;
+}
+.selected {
+  background: mediumseagreen !important;
+  color: white;
+}
+
+.books {
+  background: #3399ff;
+  padding: 0.5em 1em 0.5em 1.5em;
+  margin: auto;
+  max-width: 16em;
+}
+.books .bookListItem
+{
+  font-size: 0.875em;
+  font-family: Georgia, Serif;
+  background: #cce5ff;
+  padding: 0.3em;
+  margin: 0.2em;
+  text-align: left;
+}

@@ -1,0 +1,14 @@
+<div *ngIf="book" class="details">
+    <h3>{{book.name}}</h3>
+    <table style="width: 100%">
+        <tr>
+            <td>Name:</td>
+            <td><input [(ngModel)]="book.name" placeholder="name"></td>
+        </tr>
+        <tr>
+            <td>Release year: </td>
+            <input [(ngModel)]="book.releaseYear" placeholder="release year">
+        </tr>
+    </table>
+    <button (click)="goBack()">Back</button>
+</div>

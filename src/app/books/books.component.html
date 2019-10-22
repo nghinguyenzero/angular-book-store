@@ -1,0 +1,13 @@
+<h2>Favorite books</h2>
+<div class="parent">
+    <ol class="books">
+        <li class="bookListItem"
+            *ngFor="let eachBook of books">
+            <a routerLink="/detail/{{eachBook.id}}" style="text-decoration: none;">
+                {{eachBook.name}} - {{eachBook.releaseYear}}
+            </a>
+        </li>
+    </ol>
+</div>
+
+
