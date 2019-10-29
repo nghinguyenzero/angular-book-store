@@ -6,9 +6,9 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { BookDetailComponent } from './book-detail/book-detail.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'books', component: BooksComponent },
-  { path: 'dashboard', component: DashboardComponent },
+  { path: 'home', component: DashboardComponent },
   { path: 'detail/:id', component: BookDetailComponent }
 ];
 

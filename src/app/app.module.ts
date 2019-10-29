@@ -12,6 +12,8 @@ import { MessageService } from './message.service';
 import { AppRoutingModule } from './/app-routing.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { HttpClientModule } from '@angular/common/http';
+import { BookSearchComponent } from './book-search/book-search.component';
+import { HeaderComponent } from './header/header.component';
 
 
 @NgModule({
@@ -20,7 +22,9 @@ import { HttpClientModule } from '@angular/common/http';
     BooksComponent,
     BookDetailComponent,
     MessagesComponent,
-    DashboardComponent
+    DashboardComponent,
+    BookSearchComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,

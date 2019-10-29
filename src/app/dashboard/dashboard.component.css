@@ -17,7 +17,7 @@
     border-radius: 20px;
 }
 .book-box:hover {
-    background: green;
+    background: rgb(229, 236, 229);
     cursor: pointer;
     color: #eee;
 }

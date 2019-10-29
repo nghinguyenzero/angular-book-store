@@ -1,11 +1,6 @@
 {
   "books": [
     {
-      "id": 1,
-      "name": "The Ghost and the Darkness",
-      "releaseYear": 1996
-    },
-    {
       "id": 2,
       "name": "The Blind Side",
       "releaseYear": 2009
@@ -59,11 +54,6 @@
       "id": 12,
       "name": "Catch Me If You Can",
       "releaseYear": 2002
-    },
-    {
-      "name": "onepiece",
-      "releaseYear": "2000",
-      "id": 13
     }
   ]
 }

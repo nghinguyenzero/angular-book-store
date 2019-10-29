@@ -1,15 +1,12 @@
 import { Injectable } from '@angular/core';
-import { fakeBooks } from './fake-books';
 import { Book } from '../models/book';
 
-//Get data asynchronously with Observable
 import { Observable } from 'rxjs/Observable';
 import { tap, catchError } from 'rxjs/operators';
 
 import { of } from 'rxjs/observable/of';
 import { HttpClient, HttpHeaders, HttpClientModule } from '@angular/common/http';
 
-//MessageService
 import { MessageService } from './message.service';
 
 const httpOptions = {
@@ -22,8 +19,7 @@ export class BookService {
   private booksUrl = 'http://localhost:4000/books';
   constructor(
     private httpclient: HttpClient,
-    public messageService: MessageService)
-  { }
+    public messageService: MessageService) { }
   getBooks(): Observable<Book[]> {
     // this.messageService.add(`${ new Date().toLocaleString()}. Get book list`);
     // return of(fakeBooks);
@@ -63,5 +59,14 @@ export class BookService {
       tap(_ => console.log(`delete book  = ${bookId}`)),
       catchError( error => of(null))
     );
+  }
+  searchBooks(keyString: string): Observable<Book[]> {
+    if (!keyString.trim()) {
+      return of([]);
+    }
+    return this.httpclient.get<Book[]>(`${this.booksUrl}?name_like=${keyString}`).pipe(
+      tap(finderBooks => {console.log(`receivedBooks = ${JSON.stringify(finderBooks)}`); }),
+      catchError(error => of(null))
+    )
   }
 }

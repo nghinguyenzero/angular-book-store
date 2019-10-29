@@ -5,7 +5,6 @@
       <td>New Book name</td>
       <td><input #bookName placeholder="name"></td>
 
-
     </tr>
     <tr>
       <td>Release year</td>
@@ -23,7 +22,7 @@
   </table>
 </div>
 
-<div class="parent">
+<!-- <div class="parent">
     <ol class="books">
         <li class="bookListItem"
             *ngFor="let eachBook of books">
@@ -33,6 +32,26 @@
             <button title="delete book" (click)="delete(eachBook.id)">x</button>
         </li>
     </ol>
-</div>
+</div> -->
+
+<table class="table table-bordered table-hover" >
+  <thead>
+    <tr>
+      <th>STT</th>
+      <th>Name</th>
+      <th>Release Year</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let eachBook of books; index as i" style="text-decoration: none;">
+      <td>{{i+1}}</td>
+      <td routerLink="/detail/{{eachBook.id}}">{{eachBook.name}} </td>
+      <td routerLink="/detail/{{eachBook.id}}">{{eachBook.releaseYear}}</td>
+      <td><button title="delete book" (click)="delete(eachBook.id)">x</button></td>
+    </tr>
+  </tbody>
+</table>
+
 
 

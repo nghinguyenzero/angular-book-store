@@ -24,7 +24,6 @@ export class BookDetailComponent implements OnInit {
   getBookFromRoute(): void {
     const id = +this.route.snapshot.paramMap.get('id');
     console.log(`this.route.snapshot.paramMap = ${JSON.stringify(this.route.snapshot.paramMap)}`);
-    //Call service to "get book from id" ?
     this.bookService.getBookFromId(id).subscribe(book => this.book = book);
   }
 
