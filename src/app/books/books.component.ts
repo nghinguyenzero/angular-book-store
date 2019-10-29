@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Book } from '../../models/book';
-// import { fakeBooks } from '../fake-books';
 import { BookService } from '../book.service';
 
 @Component({
@@ -18,5 +17,23 @@ export class BooksComponent implements OnInit {
   }
   ngOnInit() {
     this.getBooksFromServices();
+  }
+  add(name: string, releaseYear: number): void {
+    name = name.trim();
+    if (Number.isNaN(Number(releaseYear)) || !name || Number(releaseYear) === 0 ) {
+      alert ('name must not be blank, Release year must not be number');
+      return;
+    }
+    const newBook: Book = new Book();
+    newBook.name = name;
+    newBook.releaseYear = releaseYear;
+    this.bookService.addBook(newBook).subscribe(insertedBook => {
+      this.books.push(insertedBook);
+    });
+  }
+  delete(bookId: number): void {
+    this.bookService.deleteBook(bookId).subscribe(_ =>
+      this.books = this.books.filter(book => book.id !== bookId)
+    );
   }
 }
