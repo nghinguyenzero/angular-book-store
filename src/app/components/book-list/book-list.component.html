@@ -1,0 +1,47 @@
+<h2>Favorite books</h2>
+<div style="text-align: left;">
+  <table style="width: 300px;">
+    <tr>
+      <td>Book name</td>
+      <td><input #bookName placeholder="new name"></td>
+    </tr>
+    <tr>
+      <td>Release year</td>
+      <td><input #releaseYear placeholder="release year"></td>
+    </tr>
+    <tr>
+      <button class="btn btn-success mb-10" (click)="
+      add(bookName.value, releaseYear.value);
+      bookName.value='';
+      releaseYear.value='';
+      ">
+        add
+      </button>
+    </tr>
+  </table>
+</div>
+
+<table class="table table-bordered table-hover" >
+  <thead>
+    <tr>
+      <th>STT</th>
+      <th>Name</th>
+      <th>Release Year</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let eachBook of books; index as i" style="text-decoration: none;">
+      <td>{{i+1}}</td>
+      <td routerLink="/book/{{eachBook.id}}">{{eachBook.name}} </td>
+      <td routerLink="/book/{{eachBook.id}}">{{eachBook.releaseYear}}</td>
+      <td>
+        <button class="btn btn-success" title="Edit book" (click)="delete(eachBook.id)">Detail</button>
+        <button class="btn btn-danger"title="delete book" (click)="delete(eachBook.id)">x</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+
+

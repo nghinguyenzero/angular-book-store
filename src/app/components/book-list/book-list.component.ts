@@ -1,13 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import { Book } from '../../models/book';
-import { BookService } from '../book.service';
+import { Book } from './../../../models/book';
+import { BookService } from './../../servieces/book.service';
 
 @Component({
-  selector: 'app-books',
-  templateUrl: './books.component.html',
-  styleUrls: ['./books.component.css']
+  selector: 'app-book-list',
+  templateUrl: './book-list.component.html',
+  styleUrls: ['./book-list.component.css']
 })
-export class BooksComponent implements OnInit {
+export class BookListComponent implements OnInit {
+
   books: Book[];
   constructor(private bookService: BookService) {
 
@@ -36,4 +37,5 @@ export class BooksComponent implements OnInit {
       this.books = this.books.filter(book => book.id !== bookId)
     );
   }
+
 }

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Book } from '../models/book';
+import { Book } from '../../models/book';
 
 import { Observable } from 'rxjs/Observable';
 import { tap, catchError } from 'rxjs/operators';
@@ -7,7 +7,7 @@ import { tap, catchError } from 'rxjs/operators';
 import { of } from 'rxjs/observable/of';
 import { HttpClient, HttpHeaders, HttpClientModule } from '@angular/common/http';
 
-import { MessageService } from './message.service';
+import { MessageService } from '../message.service';
 
 const httpOptions = {
   headers: new HttpHeaders({'Content-Type': 'application/json'})

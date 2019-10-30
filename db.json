@@ -1,64 +1,46 @@
 {
   "books": [
     {
-      "id": 4,
-      "name": "Back to the Future",
-      "releaseYear": 1985
-    },
-    {
-      "id": 5,
-      "name": "Yugi",
-      "releaseYear": "1993"
-    },
-    {
-      "id": 6,
-      "name": "Inception",
-      "releaseYear": 2010
-    },
-    {
-      "id": 7,
-      "name": "Freedom Writers",
-      "releaseYear": 2007
-    },
-    {
-      "id": 8,
-      "name": "Appolo 13",
-      "releaseYear": 1995
-    },
-    {
-      "id": 9,
-      "name": "Lone Survivor",
-      "releaseYear": 2013
-    },
-    {
-      "id": 10,
-      "name": "All the President's Men",
-      "releaseYear": 1976
-    },
-    {
-      "id": 11,
-      "name": "Walk the Line",
-      "releaseYear": 2005
-    },
-    {
       "id": 12,
       "name": "Catch Me If You Can",
-      "releaseYear": 2002
+      "releaseYear": 2002,
+      "description": "xin chao cacs ban, cam on cac ban",
+      "author": "Hirosima",
+      "imgURL": ""
     },
     {
       "name": "Naruto",
       "releaseYear": "1996",
-      "id": 13
+      "id": 13,
+      "description": "xin chao cacs ban, cam on cac ban",
+      "author": "Hirosima",
+      "imgURL": ""
     },
     {
       "name": "Onepuch man",
       "releaseYear": "2001",
-      "id": 14
+      "id": 14,
+      "description": "xin chao cacs ban, cam on cac ban",
+      "author": "Hirosima",
+      "imgURL": ""
     },
     {
       "name": "Bleach",
       "releaseYear": "1999",
-      "id": 15
+      "id": 15,
+      "description": "xin chao cacs ban, cam on cac ban",
+      "author": "Hirosima",
+      "imgURL": ""
+    },
+    {
+      "name": "nghi",
+      "releaseYear": "222",
+      "id": 16
+    },
+    {
+      "name": "ddd",
+      "releaseYear": "1",
+      "id": 17
     }
   ]
 }

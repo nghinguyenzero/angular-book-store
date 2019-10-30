@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Book } from '../../models/book';
-import { BookService } from '../book.service';
+import { Book } from '../../../models/book';
+import { BookService } from '../../servieces/book.service';
 
 @Component({
   selector: 'app-dashboard',

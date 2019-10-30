@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Observable, Subject, of } from 'rxjs'; //Subject sreteam
 import { Book } from 'src/models/book';
 import { distinctUntilChanged, debounceTime, switchMap } from 'rxjs/operators'; //debounceTime thoi gian giua 2 lan go,
-import { BookService } from '../book.service';
+import { BookService } from '../../servieces/book.service';
 
 @Component({
   selector: 'app-book-search',
