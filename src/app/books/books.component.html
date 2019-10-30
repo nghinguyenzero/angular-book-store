@@ -2,16 +2,15 @@
 <div style="text-align: left;">
   <table style="width: 300px;">
     <tr>
-      <td>New Book name</td>
-      <td><input #bookName placeholder="name"></td>
-
+      <td>Book name</td>
+      <td><input #bookName placeholder="new name"></td>
     </tr>
     <tr>
       <td>Release year</td>
       <td><input #releaseYear placeholder="release year"></td>
     </tr>
     <tr>
-      <button (click)="
+      <button class="btn btn-success mb-10" (click)="
       add(bookName.value, releaseYear.value);
       bookName.value='';
       releaseYear.value='';
@@ -48,7 +47,10 @@
       <td>{{i+1}}</td>
       <td routerLink="/detail/{{eachBook.id}}">{{eachBook.name}} </td>
       <td routerLink="/detail/{{eachBook.id}}">{{eachBook.releaseYear}}</td>
-      <td><button title="delete book" (click)="delete(eachBook.id)">x</button></td>
+      <td>
+        <button class="btn btn-success" title="Edit book" (click)="delete(eachBook.id)">Edit</button>
+        <button class="btn btn-danger"title="delete book" (click)="delete(eachBook.id)">x</button>
+      </td>
     </tr>
   </tbody>
 </table>

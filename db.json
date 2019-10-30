@@ -1,16 +1,6 @@
 {
   "books": [
     {
-      "id": 2,
-      "name": "The Blind Side",
-      "releaseYear": 2009
-    },
-    {
-      "id": 3,
-      "name": "Star Wars",
-      "releaseYear": 1977
-    },
-    {
       "id": 4,
       "name": "Back to the Future",
       "releaseYear": 1985
@@ -54,6 +44,21 @@
       "id": 12,
       "name": "Catch Me If You Can",
       "releaseYear": 2002
+    },
+    {
+      "name": "Naruto",
+      "releaseYear": "1996",
+      "id": 13
+    },
+    {
+      "name": "Onepuch man",
+      "releaseYear": "2001",
+      "id": 14
+    },
+    {
+      "name": "Bleach",
+      "releaseYear": "1999",
+      "id": 15
     }
   ]
 }

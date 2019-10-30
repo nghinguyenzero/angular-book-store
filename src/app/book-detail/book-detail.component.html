@@ -10,6 +10,26 @@
             <input [(ngModel)]="book.releaseYear" placeholder="release year">
         </tr>
     </table>
-    <button (click)="onSave()">Save</button>
-    <button (click)="goBack()">Back</button>
+    <button class="mt-10 btn btn-primary" (click)="goBack()">Back</button>
+    <button class="mt-10 ml-10 btn btn-default" (click)="onSave()">Save</button>
+
 </div>
+
+
+
+<!--
+<form  role="form" >
+  <legend>Edit book</legend>
+  <div class="form-group">
+    <label for="">Name</label>
+    <input type="text" class="form-control"  [(ngModel)]="book.name" [ngModelOptions]="{standalone: true}">
+  </div>
+  <div class="form-group">
+    <label for="">Price</label>
+    <input type="namber" class="form-control" [(ngModel)]="book.releaseYear" [ngModelOptions]="{standalone: true}">
+  </div>
+
+<button (click)="onSave()">Save</button>
+<button (click)="goBack()">Back</button>
+</form> -->
+
