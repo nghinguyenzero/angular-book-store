@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { BooksComponent } from './components/books/books.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BookDetailComponent } from './components/book-detail/book-detail.component';
 import { BookService } from './servieces/book.service';
 import { MessagesComponent } from './components/messages/messages.component';
@@ -19,6 +19,7 @@ import { LogoutComponent } from './components/logout/logout.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { BookListComponent } from './components/book-list/book-list.component';
 import { BookEditComponent } from './components/book-edit/book-edit.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 
 @NgModule({
@@ -34,13 +35,15 @@ import { BookEditComponent } from './components/book-edit/book-edit.component';
     LogoutComponent,
     NotFoundComponent,
     BookListComponent,
-    BookEditComponent
+    BookEditComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [
     BookService,

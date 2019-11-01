@@ -1,6 +1,25 @@
 <div id="books">
   <h4>Books search</h4>
-<input  #searchBox (keyup)="search(searchBox.value)" placeholder="Search" type="search" name="Search" id="inputsearch" class="form-control" value="" required="required" title="">
+<div class="row">
+    <div class="col-4">
+
+    </div>
+
+    <div class="col-4">
+        <div class="input-group">
+          <input class="input-black"  #searchBox (keyup)="search(searchBox.value)" placeholder="Search" type="search" name="Search" id="inputsearch" class="form-control" value="" required="required" title="">
+
+            <div class="input-group-append">
+                <button class="btn btn-outline-success btn-dark" type="button">
+                    Search
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="col-4">
+
+      </div>
+</div>
 
 <ul class="books">
   <li *ngFor="let book of books$ |async" class="bookListItem">

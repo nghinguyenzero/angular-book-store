@@ -1,27 +1,143 @@
-<h2>Favorite books</h2>
-<div style="text-align: left;">
-  <table style="width: 300px;">
-    <tr>
-      <td>Book name</td>
-      <td><input #bookName placeholder="new name"></td>
-    </tr>
-    <tr>
-      <td>Release year</td>
-      <td><input #releaseYear placeholder="release year"></td>
-    </tr>
-    <tr>
-      <button class="btn btn-success mb-10" (click)="
-      add(bookName.value, releaseYear.value);
-      bookName.value='';
-      releaseYear.value='';
-      ">
-        add
-      </button>
-    </tr>
-  </table>
+<div class="card" *ngIf="isAdd">
+  <div class="card-header">
+    NEW BOOK
+  </div>
+  <div class="card-body"></div>
+  <form>
+    <div class="form-row">
+      <div class="form-group col-md-4">
+        <label>Book name</label>
+        <input type="text" #bookName class="form-control" id="bookName" placeholder="name" />
+      </div>
+      <div class="form-group col-md-4">
+        <label>Author</label>
+        <input type="text" #author class="form-control" id="author" placeholder="author" />
+      </div>
+      <div class="form-group col-md-4">
+        <label>Title</label>
+        <input type="text" #title class="form-control" id="title" placeholder="title" />
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group col-md-4">
+        <label>Category</label>
+        <input type="text" #category class="form-control" id="category" placeholder="category" />
+      </div>
+      <div class="form-group col-md-4">
+        <label>imgUrl</label>
+        <input type="text" #imgUrl class="form-control" id="imgUrl" placeholder="imgUrl" />
+      </div>
+      <div class="form-group col-md-2">
+        <label>status</label>
+        <select id="status" value="true" class="form-control" #status>
+          <option value="true">Active</option>
+          <option value="false">Deactive</option>
+        </select>
+      </div>
+      <div class="form-group col-md-2">
+        <label>Release Year</label>
+        <input type="text" class="form-control" id="releaseYear" #releaseYear />
+      </div>
+    </div>
+
+    <div class="form-group ">
+      <label>Description</label>
+      <input type="text" #description class="form-control" id="description" placeholder="description" />
+    </div>
+    <div class="row">
+        <div class="form-group col-md-8"></div>
+
+        <div class="form-group col-md-1">
+            <button type="submit" class="btn btn-primary mb-10" (click)="
+            onAdd(
+              bookName.value, author.value, title.value, category.value, description.value, imgUrl.value, status.value, releaseYear.value
+            );
+            bookName.value = '';
+            releaseYear.value = ''
+          ">
+          Add
+        </button>
+        </div>
+        <div class="form-group col-md-1">
+            <button *ngIf="isAdd" type="submit" class="btn btn-danger btn-show-add mb-10" (click)="isAdd = !isAdd"> Cancel</button>
+
+          </div>
+    </div>
+
+  </form>
 </div>
 
-<table class="table table-bordered table-hover" >
+<button *ngIf="!isAdd" type="submit" class="btn btn-success btn-show-add mb-10" (click)="isAdd = !isAdd"> + </button>
+
+<!-- <form>
+      <div class="form-group">
+        <table style="width: 300px;">
+            <tr>
+              <td>Book name</td>
+              <td><input #bookName placeholder="book name" /></td>
+            </tr>
+            <tr>
+              <td>Author</td>
+              <td><input #author placeholder="Author" /></td>
+            </tr>
+            <tr>
+              <td>Title</td>
+              <td><input #title placeholder="title" /></td>
+
+            </tr>
+            <tr>
+              <td>category</td>
+              <td><input #category placeholder="category" /></td>
+            </tr>
+            <tr>
+              <td>Description</td>
+              <td><input #description placeholder="Description" /></td>
+            </tr>
+
+            <tr>
+              <td>status</td>
+              <td>
+              <select name="status" value="true" class="form-control"  #status >
+                <option value="true">Active</option>
+                <option value="false">Deactive</option>
+              </select>
+            </td>
+            </tr>
+            <tr>
+              <td>imgUrl</td>
+              <td><input #imgUrl placeholder="Img URL" /></td>
+            </tr>
+
+            <tr>
+              <td>Release year</td>
+              <td><input type="datetime" #releaseYear placeholder="release year" /></td>
+            </tr>
+            <tr>
+              <button
+                class="btn btn-success mb-10"
+                (click)="
+                  onAdd(
+                    bookName.value,
+                    author.value,
+                    title.value,
+                    category.value,
+                    description.value,
+                    imgUrl.value,
+                    status.value,
+                    releaseYear.value
+                    );
+                  bookName.value = '';
+                  releaseYear.value = ''
+                "
+              >
+                add
+              </button>
+            </tr>
+          </table></div>
+  </form> -->
+
+<table class="table table-bordered table-hover">
   <thead>
     <tr>
       <th>STT</th>
@@ -32,16 +148,17 @@
   </thead>
   <tbody>
     <tr *ngFor="let eachBook of books; index as i" style="text-decoration: none;">
-      <td>{{i+1}}</td>
-      <td routerLink="/book/{{eachBook.id}}">{{eachBook.name}} </td>
-      <td routerLink="/book/{{eachBook.id}}">{{eachBook.releaseYear}}</td>
+      <td>{{ i + 1 }}</td>
+      <td routerLink="/books/{{ eachBook.id }}">{{ eachBook.name }}</td>
+      <td routerLink="/books/{{ eachBook.id }}">{{ eachBook.releaseYear }}</td>
       <td>
-        <button class="btn btn-success" title="Edit book" (click)="delete(eachBook.id)">Detail</button>
-        <button class="btn btn-danger"title="delete book" (click)="delete(eachBook.id)">x</button>
+        <button class="btn btn-success" title="Edit book" routerLink="/books/{{ eachBook.id }}">
+          Detail
+        </button>
+        <button class="btn btn-danger" title="delete book" (click)="delete(eachBook.id)">
+          x
+        </button>
       </td>
     </tr>
   </tbody>
 </table>
-
-
-

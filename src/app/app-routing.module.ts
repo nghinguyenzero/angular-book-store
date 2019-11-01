@@ -12,7 +12,7 @@ import { BookEditComponent } from './components/book-edit/book-edit.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/index', pathMatch: 'full' },
-  { path: 'book/:id', component: BooksComponent,
+  { path: 'books/:id', component: BooksComponent,
   children : [
     {
       path : '',
