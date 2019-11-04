@@ -1,4 +1,4 @@
-<div class="card" *ngIf="isAdd">
+<!-- <div class="card" *ngIf="isAdd">
   <div class="card-header">
     NEW BOOK
   </div>
@@ -18,7 +18,6 @@
         <input type="text" #title class="form-control" id="title" placeholder="title" />
       </div>
     </div>
-
     <div class="form-row">
       <div class="form-group col-md-4">
         <label>Category</label>
@@ -39,12 +38,15 @@
         <label>Release Year</label>
         <input type="text" class="form-control" id="releaseYear" #releaseYear />
       </div>
+      <div class="form-group col-md-12 ">
+        <label>Description</label>
+        <textarea type="text" #description class="form-control" id="description" placeholder="description">
+
+        </textarea>
+      </div>
     </div>
 
-    <div class="form-group ">
-      <label>Description</label>
-      <input type="text" #description class="form-control" id="description" placeholder="description" />
-    </div>
+
     <div class="row">
         <div class="form-group col-md-8"></div>
 
@@ -66,10 +68,107 @@
     </div>
 
   </form>
+</div> -->
+
+<!-- <button *ngIf="!isAdd" type="submit" class="btn btn-success btn-show-add mb-10" (click)="isAdd = !isAdd"> + </button> -->
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#modelId">
+ + Add new book
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title"> NEW BOOK</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+      </div>
+      <div class="modal-body">
+          <!-- <div class="card-header">
+            NEW BOOK
+          <div class="card-body"></div> -->
+          <form>
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label>Book name</label>
+                <input type="text" #bookName class="form-control" id="bookName" placeholder="name" />
+              </div>
+              <div class="form-group col-md-6">
+                <label>Author</label>
+                <input type="text" #author class="form-control" id="author" placeholder="author" />
+              </div>
+              <div class="form-group col-md-6">
+                <label>Title</label>
+                <input type="text" #title class="form-control" id="title" placeholder="title" />
+              </div>
+              <div class="form-group col-md-6">
+                <label>Category</label>
+                <input type="text" #category class="form-control" id="category" placeholder="category" />
+              </div>
+              <div class="form-group col-md-6">
+                <label>imgUrl</label>
+                <input type="text" #imgUrl class="form-control" id="imgUrl" placeholder="imgUrl" />
+              </div>
+              <div class="form-group col-md-3">
+                <label>status</label>
+                <select id="status" value="true" class="form-control" #status>
+                  <option value="true">Active</option>
+                  <option value="false">Deactive</option>
+                </select>
+              </div>
+              <div class="form-group col-md-3">
+                <label>Release Year</label>
+                <input type="text" class="form-control" id="releaseYear" #releaseYear />
+              </div>
+              <div class="form-group col-md-12 ">
+                <label>Description</label>
+                <textarea type="text" #description class="form-control" id="description" placeholder="description">
+
+                </textarea>
+                <!-- <input type="text" #description class="form-control" id="description" placeholder="description" /> -->
+              </div>
+            </div>
+<!--
+            <div class="row">
+                <div class="form-group col-md-8"></div>
+
+                <div class="form-group col-md-1">
+                    <button type="submit" class="btn btn-primary mb-10" (click)="
+                    onAdd(
+                      bookName.value, author.value, title.value, category.value, description.value, imgUrl.value, status.value, releaseYear.value
+                    );
+                    bookName.value = '';
+                    releaseYear.value = ''
+                  ">
+                  Add
+                </button>
+                </div>
+                <div class="form-group col-md-1">
+                    <button *ngIf="isAdd" type="submit" class="btn btn-danger btn-show-add mb-10" (click)="isAdd = !isAdd"> Cancel</button>
+
+                  </div>
+            </div> -->
+
+          </form>
+        <!-- </div> -->
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal"
+        (click)="
+            onAdd(
+              bookName.value, author.value, title.value, category.value, description.value, imgUrl.value, status.value, releaseYear.value
+            );
+            bookName.value = '';
+            releaseYear.value = ''
+          ">Save</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Cancel</button>
+      </div>
+    </div>
+  </div>
 </div>
-
-<button *ngIf="!isAdd" type="submit" class="btn btn-success btn-show-add mb-10" (click)="isAdd = !isAdd"> + </button>
-
 <!-- <form>
       <div class="form-group">
         <table style="width: 300px;">
@@ -143,6 +242,10 @@
       <th>STT</th>
       <th>Name</th>
       <th>Release Year</th>
+      <th>Author</th>
+      <th>Title</th>
+
+
       <th>Action</th>
     </tr>
   </thead>
@@ -151,6 +254,10 @@
       <td>{{ i + 1 }}</td>
       <td routerLink="/books/{{ eachBook.id }}">{{ eachBook.name }}</td>
       <td routerLink="/books/{{ eachBook.id }}">{{ eachBook.releaseYear }}</td>
+      <td routerLink="/books/{{ eachBook.id }}">{{ eachBook.author }}</td>
+      <td routerLink="/books/{{ eachBook.id }}">{{ eachBook.title }}</td>
+
+
       <td>
         <button class="btn btn-success" title="Edit book" routerLink="/books/{{ eachBook.id }}">
           Detail

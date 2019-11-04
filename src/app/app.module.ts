@@ -20,6 +20,7 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
 import { BookListComponent } from './components/book-list/book-list.component';
 import { BookEditComponent } from './components/book-edit/book-edit.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { AuthGuard } from './services/auth.guard';
 
 
 @NgModule({
@@ -47,7 +48,8 @@ import { FooterComponent } from './components/footer/footer.component';
   ],
   providers: [
     BookService,
-    MessageService
+    MessageService,
+    AuthGuard
   ],
   bootstrap: [AppComponent]
 })

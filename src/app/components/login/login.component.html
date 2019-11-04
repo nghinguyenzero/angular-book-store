@@ -1,3 +1,21 @@
-<p>
-  login works!
-</p>
+
+<div class="alert alert-warning" *ngIf='error===-1'>
+  <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+  <strong>Username or password is wrong!!</strong> Alert body ...
+</div>
+
+<form action="" method="POST" role="form">
+  <legend>Form title</legend>
+
+  <div class="form-group">
+    <label for="">User name: </label>
+    <input type="text" class="form-control" #username placeholder="Username: admin">
+  </div>
+  <div class="form-group">
+    <label for="">Password: </label>
+    <input type="password" class="form-control" #password placeholder="Password: admin">
+  </div>
+
+  <button type="submit" class="btn btn-primary" (click)='onLogin(username.value,password.value)'>Login</button>
+</form>
+

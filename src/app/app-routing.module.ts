@@ -9,10 +9,12 @@ import { LogoutComponent } from './components/logout/logout.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { BookListComponent } from './components/book-list/book-list.component';
 import { BookEditComponent } from './components/book-edit/book-edit.component';
+import { AuthGuard } from './services/auth.guard';
 
 const routes: Routes = [
   { path: '', redirectTo: '/index', pathMatch: 'full' },
   { path: 'books/:id', component: BooksComponent,
+  canActivate: [AuthGuard],
   children : [
     {
       path : '',
@@ -24,7 +26,7 @@ const routes: Routes = [
     },
   ]},
 
-  { path: 'books', component: BookListComponent },
+  { path: 'books', component: BookListComponent, canActivate: [AuthGuard], },
   { path: 'index', component: DashboardComponent },
   { path: 'login', component: LoginComponent },
   { path: 'logout', component: LogoutComponent },

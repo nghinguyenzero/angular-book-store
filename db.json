@@ -3,7 +3,11 @@
     {
       "name": "nghi nguyen",
       "releaseYear": "11111",
-      "id": 17
+      "id": 17,
+      "description": "666",
+      "author": "66",
+      "status": "6555",
+      "category": "555"
     },
     {
       "name": "Onepiece",
@@ -72,14 +76,58 @@
     },
     {
       "name": "name",
-      "author": "author",
-      "title": "tile",
-      "category": "cate",
-      "description": "222222222222222",
-      "imgUrl": "img",
-      "status": "true",
-      "releaseYear": "1334",
+      "author": "aut",
+      "title": "title",
+      "category": "romantic",
+      "description": "sssssssssssssssss\n        sdddddddddddddddddddddd",
+      "imgUrl": "http://localhost:4207/index",
+      "status": "false",
+      "releaseYear": "1993",
       "id": 24
+    },
+    {
+      "name": "xin chao",
+      "author": "ss",
+      "title": "ss",
+      "category": "s",
+      "description": "ddddddd",
+      "imgUrl": "sss",
+      "status": "true",
+      "releaseYear": "1111",
+      "id": 25
+    },
+    {
+      "name": "s",
+      "author": "",
+      "title": "",
+      "category": "",
+      "description": "",
+      "imgUrl": "",
+      "status": "true",
+      "releaseYear": "2222",
+      "id": 26
+    },
+    {
+      "name": "Hello",
+      "author": "dd",
+      "title": "ss",
+      "category": "saa",
+      "description": "ww\n                ddddddd",
+      "imgUrl": "aa",
+      "status": "false",
+      "releaseYear": "2222",
+      "id": 27
+    },
+    {
+      "name": "sss",
+      "author": "sss",
+      "title": "ss",
+      "category": "ss",
+      "description": "",
+      "imgUrl": "",
+      "status": "true",
+      "releaseYear": "111",
+      "id": 28
     }
   ]
 }

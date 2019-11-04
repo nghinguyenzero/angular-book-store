@@ -38,6 +38,7 @@ export class BookListComponent implements OnInit {
     newBook.releaseYear = releaseYear;
     this.bookService.addBook(newBook).subscribe(insertedBook => {
       this.books.push(insertedBook);
+      this.isAdd = false;
     });
   }
   // des: string, author: string, imgUrl: string
